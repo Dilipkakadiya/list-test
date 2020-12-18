@@ -1,0 +1,84 @@
+<ng-container [ngSwitch]="mode">
+    <ng-container *ngSwitchCase="'card'">
+        <div class="product-grid">
+            <div class="row">
+                <div class="col-md-3 card-container" *ngFor="let item of items">
+                    <div class="product-card">
+                        <div class="product-grid-image">
+                            <img src="{{item.imagePath}}" alt="product-2" width="182" height="182">
+                        </div>
+                        <div class="product-grid-desc">
+                            <div class="product-grid-title">
+                                <h2>{{item.title}}</h2>
+                                <span class="product-grid-price">${{item.price}}</span>
+                            </div>
+                            <div class="product-grid-meta">
+                                <span class="icon-trophy">223</span>
+                                <span class="icon-pin">{{item.tags}}</span>
+                                <span class="icon-star">{{item.rating}}</span>
+                                <span class="icon-shield">{{item.percentage}}</span>
+                                <span class="icon-epack">ePack</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </ng-container>
+    <ul *ngSwitchCase="'list'">
+        <li *ngFor="let item of items">
+            <div class="product-list">
+                <div class="product-list-row">
+                    <div class="product-list-col">
+                        <div class="product-number">
+                            {{item.productId}}
+                        </div>
+                    </div>
+                    <div class="product-list-col">
+                        <div class="product-image">
+                            <img src="{{item.imagePath}}">
+                        </div>
+                    </div>
+                    <div class="product-list-col last">
+                        <div class="product-details">
+                            <div class="product-details-row">
+                                <div class="product-details-col">
+                                    <div class="product-name">
+                                        <h2>{{item.title}}</h2>
+                                        <div class="product-icons">
+                                            <span><img src="../../assets/images/ig-icon.svg" alt="" width="19"
+                                                    height="18"></span><span class="days-ago">2 Days Ago</span><span
+                                                class="dropship">Dropship</span><span><img
+                                                    src="../../assets/images/broken-tag.svg" alt="" width="28"
+                                                    height="18"></span><span><img
+                                                    src="../../assets/images/visibility-tag.svg" alt="" width="28"
+                                                    height="18"></span><span><img
+                                                    src="../../assets/images/edit-product-tag.svg" alt="" width="28"
+                                                    height="18"></span>
+                                        </div>
+                                    </div>
+                                    <div class="product-meta">
+                                        <span class="icon-pin"> {{item.tags}}</span>
+                                        <span class="icon-star"> {{item.rating}}</span>
+                                        <span class="icon-shield"> {{item.percentage}}</span>
+                                        <span class="icon-epack">{{item.percentage}}</span>
+                                    </div>
+                                </div>
+                                <div class="product-details-col">
+                                    <div class="product-price">${{item.price}}</div>
+                                </div>
+                                <div class="product-details-col">
+                                    <div class="product-actions">
+                                        <a class="icon-eye" href="#"></a>
+                                        <a class="icon-heart" href="#"></a>
+                                        <a class="icon-add" href="#"></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </li>
+    </ul>
+</ng-container>
