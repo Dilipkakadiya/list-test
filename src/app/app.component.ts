@@ -20,8 +20,8 @@ export class AppComponent {
     this._http.get<Product[]>('https://pedantic-galileo-1263ff.netlify.app/assets/db.json')
       .subscribe(
         (response) => {
-          console.log(response);
-          this.items = response;
+          console.log(response['products']);
+          this.items = response['products'];
         },
         (error) => {
           console.log('Something went wrong.');
