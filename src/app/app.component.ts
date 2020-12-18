@@ -17,7 +17,7 @@ export class AppComponent {
   }
 
   constructor(private _http: HttpClient) {
-    this._http.get<Product[]>('/api/products')
+    this._http.get<Product[]>('https://pedantic-galileo-1263ff.netlify.app/assets/db.json')
       .subscribe(
         (response) => {
           console.log(response);
